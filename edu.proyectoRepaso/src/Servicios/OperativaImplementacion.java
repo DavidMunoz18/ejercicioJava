@@ -108,31 +108,31 @@ public class OperativaImplementacion implements OperativaInterfaz {
 				System.out.println("Introduce el apellido a cambiar");
 				String apellido = sc.next();
 				
-				alumno.setApellidos(apellido);
+				listaAlumnos.get(posicion).setApellidos(apellido);
 				break;
 			case 3:
 				System.out.println("Introduce el dni a cambiar");
 				String dniC = sc.next();
 				
-				alumno.setDni(dniC);
+				listaAlumnos.get(posicion).setDni(dniC);
 				break;
 			case 4:
 				System.out.println("Introduce la fecha a cambiar (dd-MM-yyyy)");
 				LocalDate fechaCamb = LocalDate.parse(sc.next(), dTimeFormatter);
 				
-				alumno.setFechanac(fechaCamb);
+				listaAlumnos.get(posicion).setFechanac(fechaCamb);
 				break;
 			case 5:
 				System.out.println("Introduce el email a cambiar");
 				String emailC = sc.next();
 				
-				alumno.setEmail(emailC);
+				listaAlumnos.get(posicion).setEmail(emailC);
 				break;
 			case 6:
 				System.out.println("Introduce el telefono a cambiar");
 				String telefonoC = sc.next();
 				
-				alumno.setTelefono(telefonoC);
+				listaAlumnos.get(posicion).setTelefono(telefonoC);
 				break;
 			
 				
@@ -147,6 +147,30 @@ public class OperativaImplementacion implements OperativaInterfaz {
 				System.out.println("El alumno con ese dni no existe");
 			}
 		}
+		
+	}
+	@Override
+	public void eliminarCliente(List<AlumnoDto> listaAlumnos) {
+		System.out.println("Introduzca el dni del alumno a modificar");
+		String dniAlumn = sc.next();
+		
+	 
+		
+		for (AlumnoDto alumno : listaAlumnos) {
+			
+			
+			
+			if(dniAlumn.equals(alumno.getDni())) {
+				
+				listaAlumnos.remove(alumno);
+				
+				}
+			else {
+				System.out.println("El dni introducido no coincide con ningun alumno");
+			}
+			System.out.println(alumno.toString());
+			}
+			
 		
 	}
 

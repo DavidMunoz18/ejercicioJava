@@ -47,6 +47,7 @@ public class Inicio {
 				break;
 			case 3:
 				System.out.println("Has seleccionado dar de baja usuario");
+				oi.eliminarCliente(listaAlumnos);
 				break;
 
 			default:
